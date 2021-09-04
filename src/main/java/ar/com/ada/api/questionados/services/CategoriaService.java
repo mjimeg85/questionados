@@ -44,7 +44,14 @@ public class CategoriaService {
         return categoria != null;
     }
 
+    public boolean existeV2(String nombre) {
+        return repo.existsByNombre(nombre);
+    }
 
-
+    public void eliminarCategoriaPorId(Integer id) {
+        Categoria categoria = this.buscarCategoriaPorId(id);
+    
+        repo.deleteById(id);
+    }
 
 }
